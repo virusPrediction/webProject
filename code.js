@@ -15,12 +15,12 @@ class Parametrs {
     static prMask;                  //Доля людей в масках (%)
     static prPrivito;               //Доля привитых людей (%)
     static objectsB = 50;           //Количество объектов блока B
-    static objectsA = 2000;       //Количество объектов блока A
+    static objectsA = 1000;       //Количество объектов блока A
     static latentTime;              //Инкубационный период (дни)
     static imunTime;                //Период наличия иммунитета (дни)
     static radiusObjectB = 1;       //Радиус объекта класса В
-    static blockAHeight = 2000;   //Высота блока A
-    static blockAWidth = 2000;    //Ширина блока A
+    static blockAHeight = 1000;   //Высота блока A
+    static blockAWidth = 1000;    //Ширина блока A
 }
 
 //Значения изменений параметров:
@@ -323,7 +323,7 @@ function graphik(second){
 
     massiv.push([second, (ObjectBlockA.counterAIll * 100) / (Parametrs.objectsA + 1)]);      //Добавляем новое значение в массив
     massiv2.push([second, (ObjectBlockA.counterADeath * 100) / (Parametrs.objectsA + 1)]);   //Добавляем новое значение в массив
-    massiv3.push([second, ((Parametrs.objectsA - ObjectBlockA.counterAIll - ObjectBlockA.counterADeath) * 100) / (Parametrs.objectsA + 1)]);   //Добавляем новое значение в массив
+    massiv3.push([second, ((Parametrs.objectsA + 1 - ObjectBlockA.counterAIll - ObjectBlockA.counterADeath) * 100) / (Parametrs.objectsA + 1)]);   //Добавляем новое значение в массив
 
     //Функция, описывающая создание первого графика (зараженных):
     function drawFirstChart() {
@@ -362,7 +362,7 @@ function graphik(second){
         data.addRows([
           ['Зараженные', ObjectBlockA.counterAIll],     //Добавляем область
           ['Здоровые', ObjectBlockA.counterADeath],     //Добавляем область
-          ['Мертвые', Parametrs.objectsA - ObjectBlockA.counterAIll - ObjectBlockA.counterADeath]       //Добавляем область
+          ['Мертвые', Parametrs.objectsA + 1 - ObjectBlockA.counterAIll - ObjectBlockA.counterADeath]       //Добавляем область
         ]);
 
         var options = {
