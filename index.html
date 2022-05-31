@@ -12,35 +12,35 @@
 <body>
     <div class="container">
         <div class="row">
-             <div class="col-sm-6"><p>Стартовый шанс смерти (в процентах)</p>
-                <input type="text" name="chanceDeath" id="chanceDeath" max="100" value="50" onchange="chanceDeath2.value = chanceDeath.value" /><br>
+             <div class="col-sm-6"><p>Вероятность смерти (в процентах)</p>
+                <input type="number" readonly name="chanceDeath" id="chanceDeath" max="100" value="50" onchange="chanceDeath2.value = chanceDeath.value" /><br>
                 <input type="range" oninput="chanceDeath.value = chanceDeath2.value" class="form-control-range slider" type="range" min="0" max="100" value="50" id="chanceDeath2" step="1" ><br></div>
-            <div class="col-sm-6"><p>Стартовый шанс заражения (в процентах)</p>
-                <input type="text" name="chanceIll" id="chanceIll" max="100" value="50" onchange="chanceIll2.value = chanceIll.value" /><br>
-                <input type="range" oninput="chanceIll.value = chanceIll2.value" class="form-control-range slider" type="range" min="0" max="100" value="50" id="chanceIll2" step="1" ><br></div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6"><p><b>Способность к распространению</b><br>
-                <input type="text" size="70" id="radIll" required>
-            </p></div>
-            <div class="col-sm-6"><p><b>Время болезни (в днях)</b><br>
-                <input type="text" size="70" id="timeIll" required>
+            <div class="col-sm-6"><p><b>Длительность инкубационного периода (в днях)</b><br>
+                <input type="number" min="0" size="70" value="5" id="periodLatent" required>
             </p></div>
         </div>
         <div class="row">
-            <div class="col-sm-6"><p><b>Инкубационный период (в днях)</b><br>
-                <input type="text" size="70" id="periodLatent" required>
+            <div class="col-sm-6"><p><b>Способность к распространению (в дм)</b><br>
+                <input type="number" min="0" size="70" id="radIll" required>
             </p></div>
             <div class="col-sm-6"><p>Процент использования маски</p>
-                <input type="text" name="masksOnAll" id="masksOnAll" max="100" value="50" onchange="masksOnAll2.value = masksOnAll.value" /><br>
+                <input type="number" readonly name="masksOnAll" id="masksOnAll" max="100" value="50" onchange="masksOnAll2.value = masksOnAll.value" /><br>
                 <input type="range" oninput="masksOnAll.value = masksOnAll2.value" class="form-control-range slider" type="range" min="0" max="100" value="50" id="masksOnAll2" step="1" ><br></div>
         </div>
         <div class="row">
+            <div class="col-sm-6"><p>Вероятность заражения (в процентах)</p>
+                <input type="number" readonly name="chanceIll" id="chanceIll" max="100" value="50" onchange="chanceIll2.value = chanceIll.value" /><br>
+                <input type="range" oninput="chanceIll.value = chanceIll2.value" class="form-control-range slider" type="range" min="0" max="100" value="50" id="chanceIll2" step="1" ><br></div>
             <div class="col-sm-6"><p>Процент использования вакцины</p>
-                <input type="text" name="vacine" id="vacine" max="100" value="50" onchange="vacine2.value = vacine.value" /><br>
+                <input type="number" readonly name="vacine" id="vacine" max="100" value="50" onchange="vacine2.value = vacine.value" /><br>
                 <input type="range" oninput="vacine.value = vacine2.value" class="form-control-range slider" type="range" min="0" max="100" value="50" id="vacine2" step="1" ><br></div>
-            <div class="col-sm-6"><p><b>Срок наличия иммунитета (в неделях)</b><br>
-                <input type="text" size="70" id="timeImun" value="3" required>
+        </div>
+        <div class="row">
+            <div class="col-sm-6"><p><b>Длительность болезни (в днях)</b><br>
+                <input type="number" min="0" size="70" id="timeIll" required>
+            </p></div>
+            <div class="col-sm-6"><p><b>Длительность иммунитета (в неделях)</b><br>
+                <input type="number" min="0" size="70" id="timeImun" value="3" required>
             </p></div>
         </div>
     </div>
